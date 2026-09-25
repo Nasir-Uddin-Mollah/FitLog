@@ -3,6 +3,8 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import WorkoutsProvider from "@/contexts/WorkoutsContext";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,7 +18,8 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   title: "FITLOG",
-  description: "A modern fitness planner for workouts and personal progress tracking.",
+  description:
+    "A modern fitness planner for workouts and personal progress tracking.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -26,9 +29,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${oswald.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar></Navbar>
-        {children}
-        <Footer></Footer>
+        <WorkoutsProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <ToastContainer />
+        </WorkoutsProvider>
       </body>
     </html>
   );

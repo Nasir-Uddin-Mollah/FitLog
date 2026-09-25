@@ -3,8 +3,10 @@ import Link from "next/link";
 import Logo from "@/assets/logo.png";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import useWorkouts from "@/hooks/useWorkouts";
 
 const Navbar = () => {
+    const {workoutPlans, savedWorkouts} = useWorkouts();
     const pathName = usePathname();
 
     const linkClass = (path: string) =>
@@ -20,7 +22,7 @@ const Navbar = () => {
     );
 
     return (
-        <header className="border-b border-[#1C1F26]">
+        <header className="sticky top-0 z-50 bg-[#0a0b0e]/90 backdrop-blur-md border-b border-[#1C1F26]">
             <nav className="container mx-auto navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -46,11 +48,11 @@ const Navbar = () => {
                 <div className="navbar-end gap-2">
                     <Link href="/my-plan" className="btn btn-ghost rounded-full flex items-center gap-2 text-sm font-medium text-zinc-300">
                         Plan
-                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#bef264] text-xs font-bold text-black">0</span>
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#bef264] text-xs font-bold text-black">{workoutPlans.length}</span>
                     </Link>
                     <Link href="/my-plan" className="btn btn-ghost rounded-full flex items-center gap-2 text-sm font-medium text-zinc-400">
                         Saved
-                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-zinc-800 text-xs font-semibold text-zinc-400">0</span>
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-zinc-800 text-xs font-semibold text-zinc-400">{savedWorkouts.length}</span>
                     </Link>
                 </div>
             </nav>

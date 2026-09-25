@@ -1,6 +1,7 @@
 import Image from "next/image";
-import WorkoutType from "@/components/types/workout.type";
-import { LuCalendarPlus2, LuBookmark } from "react-icons/lu";
+import WorkoutType from "@/types/workout.type";
+import AddButton from "@/components/details/AddButton";
+import SaveButton from "@/components/details/SaveButton";
 
 interface WorkoutDetailPageProps {
   params: Promise<{ id: string }>;
@@ -64,9 +65,7 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
                 <span className="text-xs font-semibold tracking-wider text-zinc-500 uppercase">
                   {item.label}
                 </span>
-                <span className="font-medium text-zinc-200">
-                  {item.value}
-                </span>
+                <span className="font-medium text-zinc-200">{item.value}</span>
               </div>
             ))}
           </div>
@@ -77,31 +76,26 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
                 INSTRUCTIONS
               </h2>
               <ol className="space-y-3">
-                {workout.instructions.map((instruction: string, index: number) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal"
-                  >
-                    <span className="text-zinc-500 font-medium">
-                      {index + 1}.
-                    </span>
-                    <span>{instruction}</span>
-                  </li>
-                ))}
+                {workout.instructions.map(
+                  (instruction: string, index: number) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal"
+                    >
+                      <span className="text-zinc-500 font-medium">
+                        {index + 1}.
+                      </span>
+                      <span>{instruction}</span>
+                    </li>
+                  ),
+                )}
               </ol>
             </div>
           )}
 
           <div className="flex flex-wrap items-center gap-4 mt-8">
-            <button className="flex items-center gap-2 rounded-xl bg-[#C2F800] hover:bg-[#b0e000] active:scale-95 transition-all text-black font-extrabold text-xs sm:text-sm tracking-wider px-6 py-3.5 shadow-sm cursor-pointer">
-              <LuCalendarPlus2 className="h-4 w-4" />
-              <span>Add to today&apos;s plan</span>
-            </button>
-
-            <button className="flex items-center gap-2 rounded-xl border border-[#222630] bg-[#13151b] hover:border-zinc-600 hover:text-white active:scale-95 transition-all text-zinc-300 font-medium text-xs sm:text-sm tracking-wider px-6 py-3.5 cursor-pointer">
-              <LuBookmark className="h-4 w-4" />
-              <span>Save for later</span>
-            </button>
+            <AddButton workout={workout} />
+            <SaveButton workout={workout} />
           </div>
         </div>
       </div>

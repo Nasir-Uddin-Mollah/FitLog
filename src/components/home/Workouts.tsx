@@ -1,5 +1,5 @@
 import WorkoutCard from "../details/WorkoutCard";
-import WorkoutType from "../types/workout.type";
+import WorkoutType from "../../types/workout.type";
 
 const getWorkouts = async (): Promise<WorkoutType[]> => {
   const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
@@ -10,7 +10,10 @@ const Workouts = async () => {
   const workouts: WorkoutType[] = await getWorkouts();
 
   return (
-    <section id="library" className="container mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-8">
+    <section
+      id="library"
+      className="container mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-8"
+    >
       <h2 className="font-oswald text-2xl sm:text-3xl font-bold tracking-wide uppercase text-white mb-1">
         THE LIBRARY
       </h2>
