@@ -35,7 +35,7 @@ const Navbar = () => {
                     </div>
                     <Link href="/" className="flex items-center gap-2 px-2 text-xl">
                         <Image src={Logo} alt="FITLOG logo" width={32} height={32} className="h-8 w-8 object-contain" priority />
-                        <span className="font-bold tracking-tight">FITLOG</span>
+                        <span className="font-oswald text-2xl font-bold tracking-wider">FITLOG</span>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">

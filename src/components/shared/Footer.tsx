@@ -14,7 +14,7 @@ const Footer = () => {
             height={26}
             className="h-6 w-6 object-contain"
           />
-          <span className="text-base font-bold tracking-wider uppercase text-white">FITLOG</span>
+          <span className="font-oswald text-base font-bold tracking-wider uppercase text-white">FITLOG</span>
         </Link>
         <p className="text-sm text-zinc-400 font-normal">
           &copy; {new Date().getFullYear()} FitLog — Workout Library. Train hard, log honest.
