@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import BannerImage from "@/assets/banner.png";
 
 const Banner = () => {
@@ -16,9 +17,12 @@ const Banner = () => {
                         <p className="text-sm sm:text-base text-[#9CA3AF] max-w-md leading-relaxed mb-8">
                             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today&apos;s plan, and watch the week&apos;s work add up.
                         </p>
-                        <button className="rounded-lg bg-[#C2F800] hover:bg-[#b0e000] active:scale-95 transition-all text-black font-extrabold text-xs sm:text-sm tracking-wider uppercase px-7 py-3.5 shadow-sm hover:cursor-pointer">
+                        <Link
+                            href="#library"
+                            className="inline-block rounded-lg bg-[#C2F800] hover:bg-[#b0e000] active:scale-95 transition-all text-black font-extrabold text-xs sm:text-sm tracking-wider uppercase px-7 py-3.5 shadow-sm cursor-pointer"
+                        >
                             BROWSE WORKOUTS
-                        </button>
+                        </Link>
                     </div>
                     <div className="flex items-center justify-center lg:justify-end">
                         <Image 
