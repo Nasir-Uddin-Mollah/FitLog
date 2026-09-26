@@ -18,7 +18,21 @@ const AddButton = ({ workout }: AddButtonProps) => {
     if (isWorkoutExists) {
       return;
     }
-    
+    if (workoutPlans.length >= 5) {
+      toast.error("Today's plan is full — finish these first!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      return;
+    }
+
     setWorkoutPlans([...workoutPlans, workout]);
     toast.success("Added to today's plan", {
       position: "top-right",
