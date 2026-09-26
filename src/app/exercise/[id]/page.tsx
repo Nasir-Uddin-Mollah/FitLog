@@ -10,7 +10,7 @@ interface WorkoutDetailPageProps {
 
 const getWorkoutDetail = async (id: string) => {
   try {
-    const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
+    const res = await fetch(`https://api.api-store.workers.dev/api/fitlog/${id}`);
     if (res.ok) {
       return res.json();
     }
