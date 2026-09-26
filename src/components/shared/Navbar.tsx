@@ -4,6 +4,7 @@ import Logo from "@/assets/logo.png";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import useWorkouts from "@/hooks/useWorkouts";
+import { LuMenu } from "react-icons/lu";
 
 const Navbar = () => {
     const {workoutPlans, savedWorkouts} = useWorkouts();
@@ -27,9 +28,7 @@ const Navbar = () => {
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg aria-label="Menu" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
+                            <LuMenu className="h-5 w-5" />
                         </div>
                         <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
                             {links}
