@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BannerImage from "@/assets/banner.png";
+import { LuArrowDown } from "react-icons/lu";
 
 const Banner = () => {
     return (
@@ -19,9 +20,10 @@ const Banner = () => {
                         </p>
                         <Link
                             href="#library"
-                            className="inline-block rounded-lg bg-[#C2F800] hover:bg-[#b0e000] active:scale-95 transition-all text-black font-extrabold text-xs sm:text-sm tracking-wider uppercase px-7 py-3.5 shadow-sm cursor-pointer"
+                            className="inline-flex items-center gap-2 rounded-lg bg-[#C2F800] hover:bg-[#b0e000] active:scale-95 transition-all text-black font-extrabold text-xs sm:text-sm tracking-wider uppercase px-7 py-3.5 shadow-sm cursor-pointer"
                         >
-                            BROWSE WORKOUTS
+                            <span>BROWSE WORKOUTS</span>
+                            <LuArrowDown className="text-base sm:text-lg" />
                         </Link>
                     </div>
                     <div className="flex items-center justify-center lg:justify-end">
