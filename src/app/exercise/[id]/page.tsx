@@ -2,15 +2,32 @@ import Image from "next/image";
 import WorkoutType from "@/types/workout.type";
 import AddButton from "@/components/details/AddButton";
 import SaveButton from "@/components/details/SaveButton";
+import { notFound } from "next/navigation";
 
 interface WorkoutDetailPageProps {
   params: Promise<{ id: string }>;
 }
 
+const getWorkoutDetail = async (id: string) => {
+  try {
+    const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
+    if (res.ok) {
+      return res.json();
+    }
+    return null;
+  } catch (error) {
+    console.log("Error fetching workout details", error);
+    return null;
+  }
+};
+
 const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
   const { id } = await params;
-  const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
-  const workout: WorkoutType = await res.json();
+
+  const workout: WorkoutType = await getWorkoutDetail(id);
+  if (!workout || !workout.id) {
+    notFound();
+  }
 
   const specs = [
     { label: "EQUIPMENT", value: workout.equipment },

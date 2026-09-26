@@ -2,8 +2,13 @@ import WorkoutCard from "../details/WorkoutCard";
 import WorkoutType from "../../types/workout.type";
 
 const getWorkouts = async (): Promise<WorkoutType[]> => {
-  const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
-  return res.json();
+  try {
+    const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching workouts data:", error);
+    return [];
+  }
 };
 
 const Workouts = async () => {
