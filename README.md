@@ -130,9 +130,3 @@ fitlog/
 ├── package.json                     # Project configuration & dependencies
 └── tsconfig.json                    # TypeScript compiler configuration
 ```
-
----
-
-## 📝 License
-
-This project was created for educational purposes as part of the Programming Hero Milestone 6 Assignment. Feel free to use and adapt it for learning.
