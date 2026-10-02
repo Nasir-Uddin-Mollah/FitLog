@@ -5,10 +5,29 @@
 
 ---
 
+## 📸 Application Preview
+
+![FitLog Application Preview](public/screenshot.png)
+
+---
+
+## 📖 Project Overview
+
+**FitLog** is an intuitive, modern fitness web application crafted to streamline workout routines for athletes and gym-goers. Designed with a dark gym aesthetic and mobile-first responsiveness, FitLog enables users to:
+- **Browse Exercises**: Explore a curated library of strength and hypertrophy exercises targeting every major muscle group (Chest, Back, Arms, Legs, Core).
+- **In-depth Workout Details**: Inspect detailed exercise descriptions, step-by-step execution instructions, target muscles, required equipment, and estimated calorie burns.
+- **Daily Plan Builder**: Add workouts to **"Today's Plan"** with a strict 5-lift cap to prioritize training quality over exhaustion.
+- **Save for Later**: Bookmark exercises in a dedicated saved queue for future workouts.
+- **Live Real-Time Analytics**: Monitor cumulative training duration and estimated energy expenditure through a reactive metrics bar.
+- **Progress Tracking**: Mark lifts as completed with celebratory notifications and persistent data synchronization across sessions.
+
+---
+
 ## 🔗 Project Links
 
-- **Repository**: [https://github.com/Nasir-Uddin-Mollah/FitLog](https://github.com/Nasir-Uddin-Mollah/FitLog)
-- **Live Demo**: *(Add your deployment URL here, e.g., Vercel / Netlify)*
+- 🌐 **Live Demo**: [https://fit-log-five-alpha.vercel.app](https://fit-log-five-alpha.vercel.app)
+- 💻 **Source Code Repository**: [https://github.com/Nasir-Uddin-Mollah/FitLog](https://github.com/Nasir-Uddin-Mollah/FitLog)
+- ⚡ **Backend REST API**: [https://api.api-store.workers.dev/api/fitlog](https://api.api-store.workers.dev/api/fitlog)
 
 ---
 
@@ -24,6 +43,28 @@
 | **Notifications** | [React Toastify](https://fkhadra.github.io/react-toastify/) | Dark-themed toast feedback for user actions |
 | **State & Storage** | React Context API + HTML5 `localStorage` | Global workout plan state with persistent reload safety |
 | **API** | Cloudflare Workers REST API | Live exercise dataset and single workout detail endpoint |
+
+---
+
+## 📦 Dependencies & Packages
+
+### Production Dependencies (`dependencies`)
+- **[next](https://www.npmjs.com/package/next)** (`16.3.6`): Modern React framework providing App Router, Turbopack, and SSR capabilities.
+- **[react](https://www.npmjs.com/package/react)** (`19.2.8`): UI foundation for building composable and reactive user interfaces.
+- **[react-dom](https://www.npmjs.com/package/react-dom)** (`19.2.8`): DOM rendering engine for React 19.
+- **[react-icons](https://www.npmjs.com/package/react-icons)** (`^5.7.0`): Icon set library providing consistent Lucide icons (`react-icons/lu`).
+- **[react-toastify](https://www.npmjs.com/package/react-toastify)** (`^11.1.0`): Toast notification system with custom dark theme support.
+
+### Development Dependencies (`devDependencies`)
+- **[tailwindcss](https://www.npmjs.com/package/tailwindcss)** (`^4`): High-performance, modern utility-first CSS framework.
+- **[@tailwindcss/postcss](https://www.npmjs.com/package/@tailwindcss/postcss)** (`^4`): PostCSS integration for Tailwind CSS v4.
+- **[daisyui](https://www.npmjs.com/package/daisyui)** (`^5.7.46`): Component library built on Tailwind CSS for badges, buttons, and theme utilities.
+- **[typescript](https://www.npmjs.com/package/typescript)** (`^5`): Typed JavaScript compiler for strong typing and developer productivity.
+- **[@types/node](https://www.npmjs.com/package/@types/node)** (`^20`): Type definitions for Node.js runtime environments.
+- **[@types/react](https://www.npmjs.com/package/@types/react)** (`^19`): TypeScript definitions for React.
+- **[@types/react-dom](https://www.npmjs.com/package/@types/react-dom)** (`^19`): TypeScript definitions for React DOM.
+- **[eslint](https://www.npmjs.com/package/eslint)** (`^9`): Linter tool for identifying and reporting on code issues.
+- **[eslint-config-next](https://www.npmjs.com/package/eslint-config-next)** (`16.3.6`): Official ESLint configuration for Next.js best practices.
 
 ---
 
@@ -72,9 +113,11 @@
 ## 🚀 Getting Started Locally
 
 ### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) (v18.18 or higher) and `npm` installed.
+Make sure you have [Node.js](https://nodejs.org/) (v18.18 or higher) and `npm` installed on your machine.
+- Verify Node: `node -v`
+- Verify npm: `npm -v`
 
-### Installation
+### Installation & Setup
 
 1. **Clone the repository:**
    ```bash
@@ -93,14 +136,24 @@ Make sure you have [Node.js](https://nodejs.org/) (v18.18 or higher) and `npm` i
    ```
 
 4. **Open in browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+   Open [http://localhost:3000](http://localhost:3000) in your web browser to view the application live.
 
 ### Building for Production
 
-To validate and create an optimized production build:
+To create an optimized production build and run it locally:
 ```bash
+# Generate the production build
 npm run build
+
+# Start the production server
 npm run start
+```
+
+### Linting & Code Quality
+
+To run ESLint and inspect code standards:
+```bash
+npm run lint
 ```
 
 ---
@@ -126,7 +179,7 @@ fitlog/
 │   ├── contexts/                    # WorkoutsContext with localStorage sync
 │   ├── hooks/                       # Custom useWorkouts hook
 │   └── types/                       # TypeScript interfaces (WorkoutType)
-├── public/                          # Static public assets
+├── public/                          # Static public assets (screenshot.png, icons)
 ├── package.json                     # Project configuration & dependencies
 └── tsconfig.json                    # TypeScript compiler configuration
 ```
